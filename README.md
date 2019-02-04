@@ -315,6 +315,9 @@ _server1 ping router1.tp4 sur l'IP 10.2.0.254_
 
 ### 2. Wireshark
 
+
+#### A. Interception d'ARP et ping
+
 1. router 1 :
 
         [root@router1 ~]# sudo tcpdump -i enp0s9 -w ping.pcap
@@ -361,3 +364,16 @@ _server1 ping router1.tp4 sur l'IP 10.2.0.254_
         10	157.962952	PcsCompu_91:25:ce	PcsCompu_96:68:53	ARP	60	Who has 10.2.0.254? Tell 10.2.0.10
         11	157.962972	PcsCompu_96:68:53	PcsCompu_91:25:ce	ARP	42	10.2.0.254 is at 08:00:27:96:68:53
 
+
+#### B. Interception d'une communication netcat
+
+_Avec le port ouvert :_
+
+    1	0.000000	10.1.0.10	10.2.0.10	TCP	74	41728 → 8888 [SYN] Seq=0 Win=29200 Len=0 MSS=1460 SACK_PERM=1 TSval=3430740 TSecr=0 WS=64
+    2	0.000429	10.2.0.10	10.1.0.10	ICMP	102	Destination unreachable (Host administratively prohibited)
+    3	5.002688	PcsCompu_91:25:ce	PcsCompu_96:68:53	ARP	60	Who has 10.2.0.254? Tell 10.2.0.10
+    4	5.002707	PcsCompu_96:68:53	PcsCompu_91:25:ce	ARP	42	10.2.0.254 is at 08:00:27:96:68:53
+
+_Avec le port fermé :_
+
+    Bah ça a rien capturé...
