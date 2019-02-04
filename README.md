@@ -58,35 +58,35 @@ _server1 ping router1.tp4 sur l'IP 10.2.0.254_
 
 4. test :
 
-_client1 ping server1 :_  
+    _client1 ping server1 :_  
 
-    [root@client1 ~]# ping 10.2.0.10
-    PING 10.2.0.10 (10.2.0.10) 56(84) bytes of data.
-    64 bytes from 10.2.0.10: icmp_seq=1 ttl=63 time=0.630 ms
-    64 bytes from 10.2.0.10: icmp_seq=2 ttl=63 time=0.721 ms
-    64 bytes from 10.2.0.10: icmp_seq=3 ttl=63 time=0.940 ms
-    ^C
-    --- 10.2.0.10 ping statistics ---
-    3 packets transmitted, 3 received, 0% packet loss, time
+        [root@client1 ~]# ping 10.2.0.10
+        PING 10.2.0.10 (10.2.0.10) 56(84) bytes of data.
+        64 bytes from 10.2.0.10: icmp_seq=1 ttl=63 time=0.630 ms
+        64 bytes from 10.2.0.10: icmp_seq=2 ttl=63 time=0.721 ms
+        64 bytes from 10.2.0.10: icmp_seq=3 ttl=63 time=0.940 ms
+        ^C
+        --- 10.2.0.10 ping statistics ---
+        3 packets transmitted, 3 received, 0% packet loss, time
 
-_server1 ping client1 :_  
+    _server1 ping client1 :_  
 
-    [root@server1 ~]# ping 10.1.0.10
-    PING 10.1.0.10 (10.1.0.10) 56(84) bytes of data.
-    64 bytes from 10.1.0.10: icmp_seq=1 ttl=63 time=0.694 ms
-    64 bytes from 10.1.0.10: icmp_seq=2 ttl=63 time=0.752 ms
-    64 bytes from 10.1.0.10: icmp_seq=3 ttl=63 time=0.732 ms
-    ^C
-    --- 10.1.0.10 ping statistics ---
-    3 packets transmitted, 3 received, 0% packet loss, time 2006ms
-    rtt min/avg/max/mdev = 0.694/0.726/0.752/0.024 ms
+        [root@server1 ~]# ping 10.1.0.10
+        PING 10.1.0.10 (10.1.0.10) 56(84) bytes of data.
+        64 bytes from 10.1.0.10: icmp_seq=1 ttl=63 time=0.694 ms
+        64 bytes from 10.1.0.10: icmp_seq=2 ttl=63 time=0.752 ms
+        64 bytes from 10.1.0.10: icmp_seq=3 ttl=63 time=0.732 ms
+        ^C
+        --- 10.1.0.10 ping statistics ---
+        3 packets transmitted, 3 received, 0% packet loss, time 2006ms
+        rtt min/avg/max/mdev = 0.694/0.726/0.752/0.024 ms
 
-_traceroute_
+    _traceroute_
 
-    [root@client1 ~]# traceroute 10.2.0.10
-    traceroute to 10.2.0.10 (10.2.0.10), 30 hops max, 60 byte packets
-    1  10.1.0.254 (10.1.0.254)  0.298 ms  0.197 ms  0.126 ms
-    2  10.2.0.10 (10.2.0.10)  0.487 ms !X  0.376 ms !X  0.306 ms !X
+        [root@client1 ~]# traceroute 10.2.0.10
+        traceroute to 10.2.0.10 (10.2.0.10), 30 hops max, 60 byte packets
+        1  10.1.0.254 (10.1.0.254)  0.298 ms  0.197 ms  0.126 ms
+        2  10.2.0.10 (10.2.0.10)  0.487 ms !X  0.376 ms !X  0.306 ms !X
 
 ## II - Spéléologie réseau
 
