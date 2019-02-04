@@ -1,6 +1,6 @@
 # Rendu TP4
 
-## Mise en place du Lab
+## I - Mise en place du Lab
 
 _client1 ping router1.tp4 sur l'IP 10.1.0.254_
 
@@ -46,15 +46,15 @@ _server1 ping router1.tp4 sur l'IP 10.2.0.254_
 
 2. sur client1 :  
 
-    [root@client1 ~]# ip route show
-    10.1.0.0/24 dev enp0s8 proto kernel scope link src 10.1.0.10 metric 100
-    10.2.0.0/24 via 10.1.0.254 dev enp0s8 proto static metric 100
+        [root@client1 ~]# ip route show
+        10.1.0.0/24 dev enp0s8 proto kernel scope link src 10.1.0.10 metric 100
+        10.2.0.0/24 via 10.1.0.254 dev enp0s8 proto static metric 100
 
 3. sur server1 :
 
-    [root@server1 ~]# ip route show
-    10.1.0.0/24 via 10.2.0.254 dev enp0s8 proto static metric 100
-    10.2.0.0/24 dev enp0s8 proto kernel scope link src 10.2.0.10 metric 100
+        [root@server1 ~]# ip route show
+        10.1.0.0/24 via 10.2.0.254 dev enp0s8 proto static metric 100
+        10.2.0.0/24 dev enp0s8 proto kernel scope link src 10.2.0.10 metric 100
 
 4. test :
 
@@ -87,3 +87,6 @@ _traceroute_
     traceroute to 10.2.0.10 (10.2.0.10), 30 hops max, 60 byte packets
     1  10.1.0.254 (10.1.0.254)  0.298 ms  0.197 ms  0.126 ms
     2  10.2.0.10 (10.2.0.10)  0.487 ms !X  0.376 ms !X  0.306 ms !X
+
+## II - Spéléologie réseau
+
