@@ -163,6 +163,7 @@ _server1 ping router1.tp4 sur l'IP 10.2.0.254_
         rtt min/avg/max/mdev = 0.667/0.698/0.716/0.030 ms
 
 4. router1 :
+
         [root@router1 ~]# ip neigh show
         10.2.0.10 dev enp0s9 lladdr 08:00:27:91:25:ce STALE
         10.1.0.10 dev enp0s8 lladdr 08:00:27:2c:64:9d STALE
@@ -316,35 +317,35 @@ _server1 ping router1.tp4 sur l'IP 10.2.0.254_
 
 1. router 1 :
 
-    [root@router1 ~]# sudo tcpdump -i enp0s9 -w ping.pcap
-    tcpdump: listening on enp0s9, link-type EN10MB (Ethernet), capture size 262144 bytes
+        [root@router1 ~]# sudo tcpdump -i enp0s9 -w ping.pcap
+        tcpdump: listening on enp0s9, link-type EN10MB (Ethernet), capture size 262144 bytes
 
 2. client 1 :
 
     _Je vide la table arp_  
 
-    [root@client1 ~]# ping -c 4 10.2.0.10
-    PING 10.2.0.10 (10.2.0.10) 56(84) bytes of data.
-    64 bytes from 10.2.0.10: icmp_seq=1 ttl=63 time=0.839 ms
-    64 bytes from 10.2.0.10: icmp_seq=2 ttl=63 time=0.706 ms
-    64 bytes from 10.2.0.10: icmp_seq=3 ttl=63 time=0.657 ms
-    64 bytes from 10.2.0.10: icmp_seq=4 ttl=63 time=0.705 ms
+        [root@client1 ~]# ping -c 4 10.2.0.10
+        PING 10.2.0.10 (10.2.0.10) 56(84) bytes of data.
+        64 bytes from 10.2.0.10: icmp_seq=1 ttl=63 time=0.839 ms
+        64 bytes from 10.2.0.10: icmp_seq=2 ttl=63 time=0.706 ms
+        64 bytes from 10.2.0.10: icmp_seq=3 ttl=63 time=0.657 ms
+        64 bytes from 10.2.0.10: icmp_seq=4 ttl=63 time=0.705 ms
 
 3. router 1 :
 
-    ^C11 packets captured
-    11 packets received by filter
-    0 packets dropped by kernel
-    [root@router1 ~]# ls
-    anaconda-ks.cfg  ping.pcap
+        ^C11 packets captured
+        11 packets received by filter
+        0 packets dropped by kernel
+        [root@router1 ~]# ls
+        anaconda-ks.cfg  ping.pcap
 
-    PS C:\Users\PHOEN> scp root@10.2.0.254:ping.pcap C:\Users\PHOEN\Desktop\
-    root@10.2.0.254's password:
-    Permission denied, please try again.
-    root@10.2.0.254's password:
-    Permission denied, please try again.
-    root@10.2.0.254's password:
-    ping.pcap                                                                             100% 1169   167.8KB/s
+        PS C:\Users\PHOEN> scp root@10.2.0.254:ping.pcap C:\Users\PHOEN\Desktop\
+        root@10.2.0.254's password:
+        Permission denied, please try again.
+        root@10.2.0.254's password:
+        Permission denied, please try again.
+        root@10.2.0.254's password:
+        ping.pcap                                                                             100% 1169   167.8KB/s
 
 4. sur l'hôte :
 
